@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Login-page</title>
+</head>
+<body>
+<center>
+<h2>Sign-Up</h2>
+<form id="signup"action="trav.html"method="POST">
+<div>
+<label>UserName</label>
+<input type="text"id="uname"required minlenght="4"placeholder="Enter the UserName">
+<div class="ermes"id="usrer"></div>
+</div>
+<div>
+<label>Email</label>
+<input type="email"id="mail"required placeholder="Enter the email Id">
+<div class="ermes"id="emer"></div>
+</div>
+<div>
+<label>Password</label>
+<input type="password"id="pwd"required milength="8"placeholder="Enter the password">
+<div class="ermes"id="pwer"></div>
+</div>
+<div style="text-decoration: none;">
+<a href="trav.html" >Sign-Up</a>
+</div>
+</center>
+<script>
+const form=document.getElementById('signUp');
+form.addEventListner('submit,function(event)
+{
+document.getElementById ('usrer').textContent="";
+document.getElementById ('emer').textContent="";
+document.getElementById ('pwer').textContent="";
+const form=document.getElementById('uname');
+if(username.value.length<4)
+{
+document.getElementById('usrer').textContent="Username must be at least 4 characters";
+isValid=false;
+}
+{
+const email=document.getElementById('mail');
+const emailpattern=/^[a-zA-Z0-9._%+-]+@\.[a-zA-Z]{2,}$/;
+if(!       emailpattern.test(email.value))
+{
+document.getElementById('emer').textContent='Please enter the valid email Address.';
+isValid=false;
+}
+const password=document.getElementById('pwd');
+if(password.value.length<8)
+{
+document.getElementById('pwer').textContent="password must be atleast 8 characters.";
+isValid=false;
+}
+event.preventDefault();
+}
+};
+</script>
+</body>
+</html>
